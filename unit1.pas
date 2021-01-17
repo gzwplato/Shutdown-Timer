@@ -44,7 +44,7 @@ implementation
 
 procedure Shutdown();
 begin
-  fpSystem('/sbin/shutdown -P now')
+  fpSystem('/sbin/shutdown -P now');
 end;
 
 procedure UpdateFormCaption();
