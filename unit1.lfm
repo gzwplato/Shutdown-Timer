@@ -1,0 +1,79 @@
+object Form1: TForm1
+  Left = 644
+  Height = 128
+  Top = 263
+  Width = 546
+  BorderStyle = bsSingle
+  Caption = 'Shutdown Timer'
+  ClientHeight = 128
+  ClientWidth = 546
+  LCLVersion = '2.0.0.4'
+  object TrackBarHours: TTrackBar
+    Left = 96
+    Height = 25
+    Top = 19
+    Width = 400
+    Max = 24
+    OnChange = TrackBarHoursChange
+    Position = 0
+    TabOrder = 0
+  end
+  object TrackBarMinutes: TTrackBar
+    Left = 96
+    Height = 25
+    Top = 51
+    Width = 400
+    Max = 60
+    OnChange = TrackBarMinutesChange
+    Position = 0
+    TabOrder = 1
+  end
+  object LabelHours: TLabel
+    Left = 16
+    Height = 21
+    Top = 16
+    Width = 42
+    Caption = 'Hours'
+    ParentColor = False
+  end
+  object LabelMinutes: TLabel
+    Left = 16
+    Height = 21
+    Top = 48
+    Width = 55
+    Caption = 'Minutes'
+    ParentColor = False
+  end
+  object LabelHoursCount: TLabel
+    Left = 512
+    Height = 21
+    Top = 16
+    Width = 9
+    Caption = '0'
+    ParentColor = False
+  end
+  object LabelMinutesCount: TLabel
+    Left = 512
+    Height = 21
+    Top = 48
+    Width = 9
+    Caption = '0'
+    ParentColor = False
+  end
+  object ButtonStart: TButton
+    Left = 424
+    Height = 25
+    Top = 88
+    Width = 106
+    Caption = 'Start'
+    Enabled = False
+    OnClick = ButtonStartClick
+    TabOrder = 2
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    left = 16
+    top = 80
+  end
+end
