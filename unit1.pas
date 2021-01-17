@@ -34,7 +34,6 @@ type
 var
   Form1: TForm1;
   tHours, tMinutes, tSeconds: Integer;
-  tSecondsLeft: Integer;
   bActivated: Boolean;
 
 implementation
@@ -45,11 +44,8 @@ implementation
 
 procedure Shutdown();
 begin
-  //Application.MessageBox('Hello', 'Title', 0);
   fpSystem('/sbin/shutdown -P now')
 end;
-
-
 
 procedure UpdateFormCaption();
 begin
@@ -57,7 +53,6 @@ begin
   if tSeconds < 60 then Form1.Caption:= IntToStr(tSeconds)+' s - Shutdown Timer';
   if (tSeconds >= 60) and (tSeconds < 3600) then Form1.Caption:=IntToStr(Trunc(tSeconds/60))+' m '+IntToStr(tSeconds - Trunc(tSeconds/60)*60)+' s'+' - Shutdown Timer';
   if (tSeconds >= 3600) then Form1.Caption:=IntToStr(Trunc(tSeconds/3600))+' h '+IntToStr(Trunc(tSeconds/60)-Trunc(tSeconds/3600)*60)+' m '+IntToStr(tSeconds - Trunc(tSeconds/60)*60)+' s'+' - Shutdown Timer';
-
 end;
 
 procedure UpdateTimeTotal();
@@ -92,7 +87,6 @@ end;
 
 procedure TForm1.ButtonStartClick(Sender: TObject);
 begin
-
   if bActivated = False then
   begin
   ButtonStart.Caption := 'Stop';
@@ -118,7 +112,6 @@ begin
   LabelMinutes.Enabled := True;
   LabelMinutesCount.Enabled := True;
   end;
-
 end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);
